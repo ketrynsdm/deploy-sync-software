@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deploy Sync | Automação de Vendas com IA para WhatsApp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#134e4a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0f172a",
+                        "inverse-surface": "#1e293b",
+                        "on-error-container": "#991b1b",
+                        "surface-tint": "#0070f3",
+                        "on-primary-fixed": "#1e3a8a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#0f766e",
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#f1f5f9",
+                        "primary-fixed": "#dbeafe",
+                        "on-secondary-container": "#115e59",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#cbd5e1",
+                        "on-surface-variant": "#475569",
+                        "primary-container": "#dbeafe",
+                        "background": "#ffffff",
+                        "surface-container-low": "#f9fafb",
+                        "on-tertiary-fixed-variant": "#0d9488",
+                        "on-tertiary-container": "#134e4a",
+                        "surface": "#ffffff",
+                        "surface-container-highest": "#d1d5db",
+                        "on-primary-container": "#1e40af",
+                        "tertiary-fixed-dim": "#5eead4",
+                        "tertiary-container": "#99f6e4",
+                        "surface-container-high": "#e5e7eb",
+                        "tertiary": "#2dd4bf",
+                        "primary-fixed-dim": "#bfdbfe",
+                        "tertiary-fixed": "#99f6e4",
+                        "on-tertiary-fixed": "#134e4a",
+                        "primary": "#0070f3",
+                        "inverse-primary": "#3b82f6",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ccfbf1",
+                        "error": "#ef4444",
+                        "secondary-fixed-dim": "#99f6e4",
+                        "outline": "#e5e7eb",
+                        "inverse-on-surface": "#f8fafc",
+                        "surface-container": "#f3f4f6",
+                        "surface-dim": "#f9fafb",
+                        "surface-bright": "#ffffff",
+                        "secondary": "#0d9488",
+                        "error-container": "#fee2e2",
+                        "on-primary-fixed-variant": "#1d4ed8",
+                        "secondary-container": "#ccfbf1"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 112, 243, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-xl font-black tracking-tighter text-slate-900">
+                Deploy Sync
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors" href="#solucoes">Soluções</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors" href="#como-funciona">Como Funciona</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors" href="#recursos">Recursos</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors" href="#casos-de-uso">Casos de Uso</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-blue-500/20 hover:opacity-80 transition-all active:scale-95">
+                    Agendar Demo
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-40 pb-24 hero-gradient relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-primary text-sm font-bold uppercase tracking-wider mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+</span>
+                    Nova Automação com IA
+                </div>
+<h1 class="text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-8 leading-[1.1]">
+                    Transforme seu WhatsApp em uma Máquina de Vendas com IA
+                </h1>
+<p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                    O Deploy Sync Software automatiza a qualificação de leads, filtra prospects não qualificados e agenda reuniões direto no seu calendário.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold shadow-xl shadow-blue-500/25 hover:-translate-y-1 transition-all">
+                        Agendar Demonstração
+                    </button>
+<button class="px-8 py-4 rounded-full font-bold text-slate-900 border-2 border-slate-200 hover:bg-slate-50 transition-all">
+                        Veja Como Funciona
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="relative z-20 rounded-3xl overflow-hidden shadow-2xl shadow-blue-200/50 bg-[#e5ddd5] aspect-[4/5] flex flex-col border border-slate-200">
+<!-- WhatsApp Header -->
+<div class="bg-[#075e54] p-4 flex items-center gap-3 text-white">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-slate-500">smart_toy</span>
+</div>
+<div>
+<p class="font-bold leading-none">Deploy Sync Assistant</p>
+<p class="text-[10px] opacity-80">Online</p>
+</div>
+<div class="ml-auto flex gap-4 opacity-80">
+<span class="material-symbols-outlined text-xl">videocam</span>
+<span class="material-symbols-outlined text-xl">call</span>
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</div>
+</div>
+<!-- Chat Area -->
+<div class="flex-1 p-4 space-y-4 overflow-y-auto scrollbar-hide">
+<!-- Message 1: Lead -->
+<div class="flex justify-start">
+<div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-[80%] relative">
+<p class="text-sm text-slate-800">Olá, gostaria de saber mais sobre o software.</p>
+<p class="text-[9px] text-slate-400 text-right mt-1">09:41</p>
+<div class="absolute top-0 -left-2 w-0 h-0 border-t-[10px] border-t-white border-l-[10px] border-l-transparent"></div>
+</div>
+</div>
+<!-- Message 2: IA -->
+<div class="flex justify-end">
+<div class="bg-[#dcf8c6] p-3 rounded-lg rounded-tr-none shadow-sm max-w-[85%] relative">
+<p class="text-sm text-slate-800">Olá! Sou o assistente da Deploy Sync. Posso te ajudar a automatizar suas vendas. Qual o tamanho do seu time comercial?</p>
+<div class="flex items-center justify-end gap-1 mt-1">
+<p class="text-[9px] text-slate-500">09:42</p>
+<span class="material-symbols-outlined text-[14px] text-blue-500">done_all</span>
+</div>
+<div class="absolute top-0 -right-2 w-0 h-0 border-t-[10px] border-t-[#dcf8c6] border-r-[10px] border-r-transparent"></div>
+</div>
+</div>
+<!-- Message 3: Lead -->
+<div class="flex justify-start">
+<div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-[80%] relative">
+<p class="text-sm text-slate-800">Somos 15 pessoas.</p>
+<p class="text-[9px] text-slate-400 text-right mt-1">09:42</p>
+<div class="absolute top-0 -left-2 w-0 h-0 border-t-[10px] border-t-white border-l-[10px] border-l-transparent"></div>
+</div>
+</div>
+<!-- Message 4: IA -->
+<div class="flex justify-end">
+<div class="bg-[#dcf8c6] p-3 rounded-lg rounded-tr-none shadow-sm max-w-[85%] relative">
+<p class="text-sm text-slate-800">Perfeito! Tenho um horário disponível para uma demo amanhã às 14h. Podemos agendar?</p>
+<div class="flex items-center justify-end gap-1 mt-1">
+<p class="text-[9px] text-slate-500">09:43</p>
+<span class="material-symbols-outlined text-[14px] text-blue-500">done_all</span>
+</div>
+<div class="absolute top-0 -right-2 w-0 h-0 border-t-[10px] border-t-[#dcf8c6] border-r-[10px] border-r-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-3 bg-[#f0f2f5] flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">mood</span>
+<span class="material-symbols-outlined text-slate-500">attach_file</span>
+<div class="flex-1 bg-white h-10 rounded-full px-4 flex items-center text-slate-400 text-sm">
+            Mensagem
+        </div>
+<div class="w-10 h-10 bg-[#00a884] rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">mic</span>
+</div>
+</div>
+</div>
+<!-- Glass Badges -->
+<div class="absolute -bottom-6 -left-6 z-30 glass-card p-6 rounded-2xl shadow-lg flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Reunião Agendada</p>
+<p class="text-xs text-slate-500">Google Calendar atualizado</p>
+</div>
+</div>
+<div class="absolute -top-6 -right-6 z-30 glass-card p-6 rounded-2xl shadow-lg flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900">Lead Qualificado</p>
+<p class="text-xs text-slate-500">Score de Venda: 98%</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Problema Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="text-3xl lg:text-4xl font-black text-slate-900 mb-6">Times de Vendas perdem tempo com os Leads errados</h2>
+<p class="text-lg text-slate-600">O custo de oportunidade de um SDR humano respondendo mensagens genéricas é alto demais.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-error mb-4 text-4xl">chat_error</span>
+<h3 class="text-xl font-bold mb-3">Mensagens repetitivas</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Horas gastas respondendo as mesmas perguntas básicas todos os dias.</p>
+</div>
+<div class="p-8 bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-error mb-4 text-4xl">filter_alt_off</span>
+<h3 class="text-xl font-bold mb-3">Leads de baixa qualidade</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Sua agenda fica lotada de pessoas que não têm orçamento ou fit.</p>
+</div>
+<div class="p-8 bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-error mb-4 text-4xl">back_hand</span>
+<h3 class="text-xl font-bold mb-3">Agendamento manual</h3>
+<p class="text-slate-600 text-sm leading-relaxed">O vaivém de mensagens para encontrar um horário mata a conversão.</p>
+</div>
+<div class="p-8 bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-error mb-4 text-4xl">trending_down</span>
+<h3 class="text-xl font-bold mb-3">Oportunidades perdidas</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Leads que esfriam esperando uma resposta em horários fora do comercial.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Solução Section (Bento Grid) -->
+<section class="py-24" id="solucoes">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+<div class="max-w-2xl">
+<h2 class="text-4xl lg:text-5xl font-black text-slate-900 mb-6 tracking-tight">Conheça seu Assistente de Vendas com IA</h2>
+<p class="text-xl text-slate-600 leading-relaxed">Uma inteligência que trabalha 24/7, fala a língua do seu cliente e nunca esquece de fazer o follow-up.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 bg-slate-900 rounded-3xl p-10 overflow-hidden relative min-h-[400px]">
+<div class="relative z-10 max-w-md">
+<h3 class="text-3xl font-bold text-white mb-4">Qualifica e Agenda em Segundos</h3>
+<p class="text-slate-400 text-lg mb-8">Nossa IA não apenas responde, ela conduz o prospect através do seu funil de vendas, validando orçamento e necessidade.</p>
+<ul class="space-y-4 text-slate-300">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-blue-400">check_circle</span> Conecta com Google Calendar</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-blue-400">check_circle</span> Atualiza seu CRM automaticamente</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-blue-400">check_circle</span> Sincronia via Webhooks</li>
+</ul>
+</div>
+<img alt="Integração Tech" class="absolute right-0 bottom-0 w-2/3 opacity-30 mask-image-linear" data-alt="High tech abstract background with data connections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGYkypGbD3bF622tS8wan7VNf_8RmDScnl63dbotVccCcAfIvUTbSkRj10AiXD1PyrkqXUBL3hW7D8xwtpIYzz6Sjay83ZHKZU9LGC--JA7uXa3udLVfP-z8ZPTz_rpN95xgPiyJ_9O28aZvnzX1zAPysv1xwaZPgKdzgCI7f_UjgU3JgTnf7NWYFoPzvzUDlOWUWnNCmbogETlD6t9CKekKkELm-tdqq-H-HJenrLS58OdxTLOIf-zBdIKwk4YlZzTyfmenBNg"/>
+</div>
+<div class="md:col-span-4 bg-primary rounded-3xl p-10 text-white flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-4xl">graphic_eq</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Entende Áudio e Imagem</h3>
+<p class="text-blue-50/80">O cliente mandou áudio? A IA transcreve, entende o contexto e responde com precisão cirúrgica.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-white/10">
+<p class="text-sm font-medium uppercase tracking-widest opacity-60">Human-Like AI</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container rounded-3xl p-10">
+<h3 class="text-2xl font-bold text-slate-900 mb-4">Suporte 24/7</h3>
+<p class="text-slate-600 mb-6">Venda enquanto você dorme. A IA atende leads meia-noite de domingo com a mesma energia.</p>
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img alt="User 1" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8IHw9HGE-St0FC16WrQAjXzFvHqPmUdPP4Gi-K_RHPH8rwaL1SdwYsIhl9uTFztP37CAz5Gb-YkbPgCYpEirjrO9d6Syp_i5zV-npyY_DNC_74DZ7TWnjPHkAC_f-os8i7k5ldCSo2CBDn4BIIoJw7d87HLBR16q-pZ3VLme4FiPAxplYD3-wNMJ396PgfinML52ElQjy63R3PU67JAJ_2rojqEjPdfbXzA-fdQQs41xJZFmm_jk6C8SXJRJQBAhwpMqFDpxZw"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img alt="User 2" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzE6k_wi1hBg42EFQCepvVWwDPidtnxJ22YL_LtNXtH7WLnmBi4057F48uyMWu_NZ9Q2N-iocHfhRYh-eVO3-Gw4uYI6IBdEK0bovpTMmPzGiq0P3yIp82DwBqHjYYLsT1ak96ms_lQYt2qwPdJGtvwScuWDnaK0TBpTN_vmL6edUVVceegIWEDk-AOb72XmhdVMQNaUt3aNXgkZuz3iyE_MTB-LBljiIbLzb5YmJZ7aAMjqQDjTflVgjI6ruFc7iU_6hdYOFE_Q"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img alt="User 3" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAktCCjKV6OTvQ2mSDZHj4AcsfIU-eF3eGjGYf3vc_A5jE7QwCCQD_llXCcZAqU4N8JwXcK4C5GN8y6sfKRQDPn75IZqt5ez8ZYW-UJt830MaQljoOk2w-Bk8p1BTtGWtBnTt1eo99-WLOme81UD8dN8S7zSS4a-xLDznvkeLOEvXrhPDHZwjDYiEKMHMTgrnl-DPYlm8wxnNec5K2lCYPdLrvj6a49amaLbYoUi1boaEQjY-sBsgaI6e6EMk3smYtGgtvFyDBXew"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold">+1k</div>
+</div>
+</div>
+<div class="md:col-span-8 bg-blue-50 rounded-3xl p-10 flex flex-col md:flex-row gap-10 items-center">
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-slate-900 mb-4">Conversas Naturais</h3>
+<p class="text-slate-600">Esqueça fluxos de chatbot engessados. Nossa IA conversa de forma fluida, interpretando gírias e intenções reais.</p>
+</div>
+<div class="flex-1 space-y-3 w-full">
+<div class="bg-white p-4 rounded-2xl rounded-bl-none shadow-sm max-w-[80%]">
+<p class="text-sm text-slate-800">"Quero marcar uma conversa mas só posso terça à tarde."</p>
+</div>
+<div class="bg-primary p-4 rounded-2xl rounded-br-none shadow-sm max-w-[80%] ml-auto text-white">
+<p class="text-sm">"Perfeito! Tenho horário às 14h e 16h na terça. Qual prefere?"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Como Funciona Section -->
+<section class="py-24 bg-slate-50" id="como-funciona">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-black text-slate-900 mb-4">Fluxo de Alta Performance</h2>
+<p class="text-slate-600">Simples, rápido e integrado ao seu dia a dia.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="relative">
+<div class="text-6xl font-black text-slate-200 absolute -top-10 left-0">01</div>
+<div class="relative pt-8">
+<h4 class="text-xl font-bold mb-4">Lead envia mensagem</h4>
+<p class="text-slate-600 text-sm">O contato inicial acontece no canal favorito do cliente: o WhatsApp.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-6xl font-black text-slate-200 absolute -top-10 left-0">02</div>
+<div class="relative pt-8">
+<h4 class="text-xl font-bold mb-4">IA analisa e qualifica</h4>
+<p class="text-slate-600 text-sm">A inteligência processa a demanda e faz perguntas chave de qualificação.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-6xl font-black text-slate-200 absolute -top-10 left-0">03</div>
+<div class="relative pt-8">
+<h4 class="text-xl font-bold mb-4">Filtro Inteligente</h4>
+<p class="text-slate-600 text-sm">Apenas quem tem fit real com seu negócio avança no processo.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-6xl font-black text-slate-200 absolute -top-10 left-0">04</div>
+<div class="relative pt-8">
+<h4 class="text-xl font-bold mb-4">Reunião agendada</h4>
+<p class="text-slate-600 text-sm">Seu calendário aparece preenchido com oportunidades prontas para fechar.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recursos Section -->
+<section class="py-24" id="recursos">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-1">
+<h2 class="text-4xl font-black text-slate-900 mb-6 leading-tight">Tudo que você precisa para escalar suas vendas</h2>
+<p class="text-slate-600 mb-8 text-lg">Tecnologia de ponta simplificada para resultados imediatos no seu caixa.</p>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                        Ver todos os recursos <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-blue-50 text-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Smart Scheduling</h4>
+<p class="text-slate-600 text-sm leading-relaxed">Sincronização em tempo real com Google e Outlook Calendar para evitar conflitos.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Integração CRM</h4>
+<p class="text-slate-600 text-sm leading-relaxed">Pipedrive, Salesforce, RD Station. Dados fluindo sem intervenção humana.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">assignment_ind</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Qualificação Automática</h4>
+<p class="text-slate-600 text-sm leading-relaxed">Configure suas próprias perguntas e critérios de score para filtrar leads.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Multi-idioma</h4>
+<p class="text-slate-600 text-sm leading-relaxed">A IA detecta e responde em mais de 50 idiomas fluentemente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefícios Section -->
+<section class="py-24 bg-primary text-white overflow-hidden relative">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="max-w-3xl mb-16">
+<h2 class="text-4xl lg:text-5xl font-black mb-6">Foque apenas nos Negócios que importam</h2>
+<p class="text-blue-100 text-xl">Deixe a triagem pesada com a gente e recupere até 70% do tempo do seu time comercial.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+<p class="text-4xl font-black mb-2">80%</p>
+<p class="text-blue-200 text-sm font-medium">Redução no custo de pré-vendas</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+<p class="text-4xl font-black mb-2">24h</p>
+<p class="text-blue-200 text-sm font-medium">Disponibilidade ininterrupta</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+<p class="text-4xl font-black mb-2">3x</p>
+<p class="text-blue-200 text-sm font-medium">Mais agendamentos qualificados</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+<p class="text-4xl font-black mb-2">Zero</p>
+<p class="text-blue-200 text-sm font-medium">Espera por resposta humana</p>
+</div>
+</div>
+</div>
+<!-- Decorative blob -->
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-400/20 blur-[100px] rounded-full"></div>
+</section>
+<!-- Casos de Uso -->
+<section class="py-24" id="casos-de-uso">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-black text-slate-900 mb-12 text-center">Feito para quem escala</h2>
+<div class="flex flex-wrap justify-center gap-4">
+<span class="px-6 py-3 bg-slate-100 rounded-full font-semibold text-slate-700">Agências de Marketing</span>
+<span class="px-6 py-3 bg-slate-100 rounded-full font-semibold text-slate-700">Consultorias B2B</span>
+<span class="px-6 py-3 bg-slate-100 rounded-full font-semibold text-slate-700">Empresas SaaS</span>
+<span class="px-6 py-3 bg-slate-100 rounded-full font-semibold text-slate-700">Serviços Imobiliários</span>
+<span class="px-6 py-3 bg-slate-100 rounded-full font-semibold text-slate-700">Equipes Inbound</span>
+<span class="px-6 py-3 bg-slate-100 rounded-full font-semibold text-slate-700">Educação e Cursos</span>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-6">
+<div class="bg-slate-900 rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-4xl lg:text-5xl font-black text-white mb-6">Deixe a IA cuidar da primeira conversa</h2>
+<p class="text-slate-400 text-xl mb-12 max-w-2xl mx-auto">Seu time deve focar em fechar negócios — não em qualificar leads.</p>
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold shadow-2xl shadow-blue-500/40 hover:scale-105 transition-all text-lg">
+                        Agendar Minha Demonstração
+                    </button>
+<p class="mt-8 text-slate-500 text-sm">Implantação rápida. Sem necessidade de código.</p>
+</div>
+<!-- Animated Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-100 bg-slate-50">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="text-lg font-black text-slate-900 mb-4">Deploy Sync</div>
+<p class="font-inter text-sm text-slate-600 max-w-xs">
+                    © 2024 Deploy Sync. Automação de Vendas com IA para WhatsApp.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
+<a class="font-inter text-sm text-slate-500 hover:text-blue-600 transition-colors hover:underline" href="#">Termos de Uso</a>
+<a class="font-inter text-sm text-slate-500 hover:text-blue-600 transition-colors hover:underline" href="#">Privacidade</a>
+<a class="font-inter text-sm text-slate-500 hover:text-blue-600 transition-colors hover:underline" href="#">Contato</a>
+<a class="font-inter text-sm text-slate-500 hover:text-blue-600 transition-colors hover:underline" href="#">Documentação</a>
+<a class="font-inter text-sm text-slate-500 hover:text-blue-600 transition-colors hover:underline" href="#">Blog</a>
+</div>
+</div>
+</footer>
+</body></html>
