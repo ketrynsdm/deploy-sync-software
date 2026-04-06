@@ -79,4 +79,3 @@ O Deploy Sync atua como um assistente de vendas com IA, responsável por:
 ## Mensagem Principal da Landing
 
 "Deixe a IA cuidar da primeira conversa para que seu time foque em fechar negócios."
-
